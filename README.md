@@ -1,8 +1,8 @@
 # InsightCodingChallenge2015
 Insight Data Engineering Coding Challenge
 
-| Dependencies |
-----------------
+##Dependencies 
+
 | Name | Version |
 ------------------
 | Apache Spark | 1.4.0 |
