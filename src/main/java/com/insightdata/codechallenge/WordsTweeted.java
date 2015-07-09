@@ -33,7 +33,7 @@ public class WordsTweeted {
             System.exit(1);
         }
 
-        SparkConf conf = new SparkConf().setMaster("local[4]").setAppName("WordCount");
+        SparkConf conf = new SparkConf().setAppName("WordCount");
         JavaSparkContext spark = new JavaSparkContext(conf);
 
         JavaRDD<String> text_file = spark.textFile(args[0], 1);
