@@ -36,16 +36,13 @@ public class WordsTweeted {
         SparkConf conf = new SparkConf().setMaster("local[4]").setAppName("WordCount");
         JavaSparkContext spark = new JavaSparkContext(conf);
 
-        JavaRDD<String> textFile = spark.textFile(args[0], 1);
-        JavaRDD<String> words = textFile.flatMap(new FlatMapFunction<String, String>() {
-          public Iterable<String> call(String s) { return Arrays.asList(WHITESPACE.split(s)); }
-        });
-        JavaPairRDD<String, Integer> pairs = words.mapToPair(new PairFunction<String, String, Integer>() {
-          public Tuple2<String, Integer> call(String s) { return new Tuple2<String, Integer>(s, 1); }
-        });
-        JavaPairRDD<String, Integer> counts = pairs.reduceByKey(new Function2<Integer, Integer, Integer>() {
-          public Integer call(Integer a, Integer b) { return a + b; }
-        });
+        JavaRDD<String> text_file = spark.textFile(args[0], 1);
+        JavaRDD<String> words = text_file.flatMap(line -> Arrays.asList(
+                        WHITESPACE.split(line)));
+        JavaPairRDD<String, Integer> counts = words.mapToPair(
+                        w -> new Tuple2<String, Integer>(w, 1))
+                        .reduceByKey((x, y) -> x + y);
+
 
         List<Tuple2<String, Integer>> output = counts.sortByKey().collect();
         for (Tuple2<String,Integer> tuple : output) {
