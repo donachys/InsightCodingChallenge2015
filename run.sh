@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 mvn package
 ../bin/spark-submit --master local[*] --class com.insightdata.codechallenge.WordsTweeted ./target/CodingChallenge-1.0.jar ./tweet_input/tweets.txt > ./tweet_output/ft1.txt
