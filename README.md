@@ -16,14 +16,16 @@ Java 1.8.0_31
 ##Instructions:
 
 Download Maven 3.3.3: see https://maven.apache.org/download.cgi
+
 Install Maven 3.3.3: see https://maven.apache.org/install.html
 
 Download Spark 1.4.0: see https://spark.apache.org/downloads.html select pre-built for hadoop 2.6 and later
-Install Spark 1.4.0: see https://spark.apache.org/docs/latest/
-Extract spark, 
-clone this repository and move the InsightCodingChallenge2015 directory to the spark-1.4.0 directory
 
-cd to the InsightCodingChallenge2015 directory and execute run.sh with ./run.sh
+Install Spark 1.4.0: see https://spark.apache.org/docs/latest/
+
+Extract spark, clone this repository and move the InsightCodingChallenge2015 directory to the spark-1.4.0 directory
+
+cd to the InsightCodingChallenge2015 directory (within spark-1.4.0) and execute run.sh with ./run.sh
 
 ##WordsTweeted Description
 
