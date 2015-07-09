@@ -4,24 +4,12 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.FlatMapFunction;
-import org.apache.spark.api.java.function.Function2;
-import org.apache.spark.api.java.function.PairFunction;
 
 import scala.Tuple2;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.BufferedWriter;
-import java.io.Writer;
-
-import java.io.UnsupportedEncodingException;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class WordsTweeted {
     private static final Pattern WHITESPACE = Pattern.compile("\\s");
